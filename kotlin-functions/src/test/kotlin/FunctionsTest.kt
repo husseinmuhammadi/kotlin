@@ -9,9 +9,14 @@ class FunctionsTest {
     }
 
     @Test
-    fun `call function with vararg parameters`() {
-        foo(strings = *arrayOf("a", "b", "c"))
+    fun `call function with variable number of arguments`() {
+        val result = asList(items = *arrayOf("a", "b", "c"))
+        println("$result")
     }
 
-
+    @Test
+    fun `single-expression functions`() {
+        val result=increment(2)
+        assertEquals(3, result)
+    }
 }
